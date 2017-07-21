@@ -59,7 +59,7 @@ $the_query = new WP_Query( $args );
 
 
   <!-- Programmation -->
-  <div class="programmation">
+  <div class="programmation row">
     <img class="image-before" src="<?php echo get_template_directory_uri() ;?>/assets/images/Fichier1.png" alt=""><h2 class="programmation-before">Programmation</h2>
 
     <?php
