@@ -60,7 +60,7 @@ $the_query = new WP_Query( $args );
 
   <!-- Programmation -->
   <div class="programmation">
-    <img class="image-before" src="<?php echo get_template_directory_uri() ;?>/assets/images/Fichier1.png" alt=""><h2 class="programmation-before">Programmation</h2>
+    <img class="image-before" src="<?php echo get_template_directory_uri() ;?>/assets/images/Fichier1.png" alt=""><img class="image-before" src="<?php echo get_template_directory_uri() ;?>/assets/images/Fichier1.png" alt=""><h2 class="programmation-before">Programmation</h2>
 
     <?php
     $categorie = get_category_by_slug('programmation');

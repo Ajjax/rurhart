@@ -2,7 +2,8 @@
 	<div class="sponsors row">
 		<h3>Un grand merci à nos partenaires</h3>
 		<?php $sponsors = array(
-			'post_type' => 'sponsor'
+			'post_type' => 'sponsor',
+			'posts_per_page' => '-1'
 		);
 		$query_sponsor = new WP_Query($sponsors);
 		 ?>

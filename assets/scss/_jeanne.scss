@@ -349,14 +349,14 @@ padding: 0;
   background: #ea6e52;
 	position: relative;
 	h2 {
-		font-size: 1em;
+		font-size: 24px;
 	    display: inline-block;
 	    color: white;
 	    border-width: 1px;
 	    border: 1px solid white;
 	    padding: 0.5rem 1rem;
 			margin-bottom: 20px;
-
+margin-top:20px;
 			}
 }
 
@@ -422,16 +422,15 @@ font-size: 24px;
 border: 1px solid white;}
 }
 
-.programmation {
-		.conteneur_artistes{
-	.columns_artiste_date {
-		.date{
-	a{padding: 0.5rem 1rem;}
-}
-}
-}
+.columns_artiste_date {
+	.date{padding: 0.5rem 1rem;
+	border:1px solid white;}
 }
 
+
+.image-before {
+	max-width: 15.5rem;
+}
 
 .tab-photos{
 display: inline-block;
