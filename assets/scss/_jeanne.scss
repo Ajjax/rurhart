@@ -230,7 +230,7 @@ footer{
 	padding:0;
 
 	.top-bar-right {
-		ul {
+		 > ul {
 			margin-right: 5rem;
 			li.menu-item {
 				padding: 0 0rem;
@@ -273,7 +273,7 @@ padding: 0;
 
 	.row.remerciements
 	{
-		// padding-top: 2rem; 
+		// padding-top: 2rem;
 		width:100%;
 		/*padding-top:20px;
 		padding-bottom:20px;*/

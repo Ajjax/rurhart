@@ -91,8 +91,8 @@ NAVIGATION STYLES
 	padding:0;
 
 	.top-bar-right {
-		ul {
-			margin-right: 5rem;
+		> ul {
+			margin-right: 5rem!important;
 			li.menu-item {
 				padding: 0 2rem;
 				a {
