@@ -4814,11 +4814,22 @@ header {
   color: #fefefe;
   border-width: 1px;
   border: 1px solid #fefefe;
-  padding: 0.5rem 1rem;
-  font-size: 1rem; }
+  font-size: 24px;
+  padding: 0.5rem 1rem; }
 
 .sponsors.row {
+  overflow: hidden;
+  position: relative;
   text-align: left !important; }
+  .sponsors.row > .columns {
+    padding: 3em 2rem 2rem 2rem; }
+
+.skew-sponsor {
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+  background: #6EB7E6;
+  transform: translateX(-40%) skewX(20deg); }
 
 header {
   width: 100%;
