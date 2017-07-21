@@ -9,8 +9,6 @@ Template Name: Contact
   <?php if (have_posts()) {
     the_post();
   ?>
-
-
   <div class="container">
     <div class="row" data-equalizer data-equalize-on="medium" id="test-eq">
       <div class="medium-8 columns" data-equalizer-watch>
