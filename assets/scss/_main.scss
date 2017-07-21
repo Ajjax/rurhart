@@ -802,3 +802,14 @@ a{color:white;}
 .image-before{
 	max-width: 17rem;
 }
+
+
+.content.row.contact{
+	.container{
+		.row{
+			.columns{
+				position: relative;
+			}
+		}
+	}
+}
