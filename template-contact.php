@@ -13,7 +13,6 @@ Template Name: Contact
 
   <div class="container">
     <div class="row" data-equalizer data-equalize-on="medium" id="test-eq">
-
       <div class="medium-8 columns" data-equalizer-watch>
         <h1>Titre</h1>
       </div>
