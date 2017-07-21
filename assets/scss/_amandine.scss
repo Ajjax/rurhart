@@ -38,3 +38,7 @@
 	height:50px;
 	@include vertical-center;
 }
+
+.contact.content.row {
+	max-width: 75rem;
+}

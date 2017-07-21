@@ -5169,6 +5169,9 @@ p {
   top: 50%;
   transform: translateY(-50%); }
 
+.contact.content.row {
+  max-width: 75rem; }
+
 /******************************************************************
 
 Stylesheet: Retina Screens & Devices Stylesheet
