@@ -819,3 +819,14 @@ a{color:white;}
 		background: $orange;
 	}
 }
+.sponsors.row h2 {
+	display: inline-block;
+    color: $white;
+    border-width: 1px;
+    border: 1px solid $white;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+}
+.sponsors.row{
+	text-align: left!important;
+}

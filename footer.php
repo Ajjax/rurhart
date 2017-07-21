@@ -1,6 +1,7 @@
 
 	<div class="sponsors row">
-		<h3>Un grand merci à nos partenaires</h3>
+		<img class="image-before" src="<?php echo get_template_directory_uri(); ?>/assets/images/Fichier2.png" alt="">
+		<h2>Un grand merci à nos partenaires</h2>
 		<?php $sponsors = array(
 			'post_type' => 'sponsor'
 		);
