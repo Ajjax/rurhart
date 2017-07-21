@@ -5,22 +5,19 @@ Template Name: Contact
  ?>
 
 <?php get_header(); ?>
-<div class="content row">
+<div class="content contact row">
   <?php if (have_posts()) {
     the_post();
   ?>
-
-
   <div class="container">
-    <div class="row">
-
-      <div class="medium-8 columns">
+    <div class="row" data-equalizer data-equalize-on="medium" id="test-eq">
+      <div class="medium-8 columns" data-equalizer-watch>
         <h1>Titre</h1>
       </div>
-      <div class="medium-2 columns">
+      <div class="medium-2 columns" data-equalizer-watch>
         <img class="logocontact" src="<?php echo get_template_directory_uri(); ?>/assets/images/logofacebook.png">
       </div>
-      <div class="medium-2 columns">
+      <div class="medium-2 columns" data-equalizer-watch>
         <img class="logocontact" src="<?php echo get_template_directory_uri(); ?>/assets/images/logoyoutube.png">
       </div>
 
@@ -45,3 +42,5 @@ Template Name: Contact
   <?php
   } ?>
 </div>
+
+<?php get_footer(); ?>
