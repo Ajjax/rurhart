@@ -5135,6 +5135,47 @@ p {
     .tab-photos2 table tr td {
       background-color: white; }
 
+/*********************
+GENERAL STYLES
+*********************/
+/* variable de couleur déclarée */
+/*********************
+NAVIGATION STYLES
+*********************/
+.top-bar {
+  bottom: 0px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 0; }
+  .top-bar .title-area {
+    z-index: 1; }
+  .top-bar .top-bar-right ul {
+    margin-right: 5rem; }
+    .top-bar .top-bar-right ul li.menu-item {
+      padding: 0 2rem; }
+      .top-bar .top-bar-right ul li.menu-item a {
+        color: white; }
+      .top-bar .top-bar-right ul li.menu-item a:hover {
+        background-color: rgba(234, 110, 82, 0.5); }
+    .top-bar .top-bar-right ul li.active a {
+      background-color: #ea6e52; }
+
+.off-canvas-list ul {
+  margin-left: 0; }
+  .off-canvas-list ul li a {
+    border-bottom: 0px; }
+  .off-canvas-list ul .dropdown {
+    margin-left: 20px; }
+
+header {
+  background-image: url(../images/banner.jpg);
+  background-repeat: no-repeat;
+  position: relative;
+  height: 350px;
+  background-position: center; }
+
 #titre {
   position: absolute;
   top: 50%;

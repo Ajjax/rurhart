@@ -45,3 +45,5 @@ Template Name: Contact
   <?php
   } ?>
 </div>
+
+<?php get_footer(); ?>
