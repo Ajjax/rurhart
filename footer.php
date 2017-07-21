@@ -1,5 +1,11 @@
 
-	<div class="sponsors row">
+	<div class="sponsors row" data-equalizer data-equalize-on="medium" id="test-eq">
+		<div class="skew-sponsor" data-equalizer-watch>
+
+		</div>
+		<div class="columns" data-equalizer-watch>
+
+
 		<img class="image-before" src="<?php echo get_template_directory_uri(); ?>/assets/images/Fichier2.png" alt="">
 		<h2>Un grand merci à nos partenaires</h2>
 		<?php $sponsors = array(
@@ -7,10 +13,10 @@
 		);
 		$query_sponsor = new WP_Query($sponsors);
 		 ?>
-		<div class="columns medium-12">
+		<div class="columns medium-12" >
 			<?php if ($query_sponsor->have_posts()): while ($query_sponsor->have_posts()) {
 				$query_sponsor->the_post();
-				echo get_the_title();
+				// echo get_the_title();
 				echo get_the_post_thumbnail($post,$size='full');
 			} ?>
 
@@ -18,6 +24,7 @@
 			<br>
 			<p> Et n'oubliez pas une chose importante : RESPECTONS L'ENVIRONNEMENT ! Et pensez au covoiturage (moins de dépenses d'essence = plus de bières ! </p>
 
+		</div>
 		</div>
 	</div>
 
