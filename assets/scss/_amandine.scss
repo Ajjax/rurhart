@@ -38,14 +38,3 @@
 	height:50px;
 	@include vertical-center;
 }
-
-
-.contact.content {
-	.container{
-		.row{
-			.columns{
-				position: relative;
-			}
-		}
-	}
-}
