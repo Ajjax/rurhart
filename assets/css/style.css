@@ -4800,6 +4800,9 @@ header {
 .skew-col {
   padding: 2rem; }
 
+.image-before {
+  max-width: 17rem; }
+
 header {
   width: 100%;
   height: 350px;
