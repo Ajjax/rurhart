@@ -77,7 +77,10 @@ $the_query = new WP_Query( $args );
       // La requete pour aller chercher les artistes
     $args_programmation = array(
       'post_type' => 'artiste',
-      'cat' => $categorie
+      'cat' => $categorie,
+      'orderby' => 'meta_value_num',
+      'meta_key' => 'date',
+      'order' => 'ASC'
     );
     // Execute la requete
     $query_prog = new WP_Query($args_programmation);
@@ -122,6 +125,7 @@ $the_query = new WP_Query( $args );
       // Affichage des bouton jours
       echo "<div class='conteneur_artistes'>";
       echo "<div class='columns_artiste_date'>";
+      arsort($tab_date);
       foreach ($tab_date as $key) {
         echo "<a class='date click_artiste' value='".$key."'>".$key."</a>";
       }
