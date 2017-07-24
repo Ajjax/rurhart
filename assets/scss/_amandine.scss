@@ -38,11 +38,22 @@
 	@include vertical-center;
 }
 
+///// MODIF 19 JUILLET
 .contact.content.row {
 	max-width: 75rem;
 }
 
 .carte {
-	display: block;
-	margin: auto;
+	width: 100%;
+	height: 500px;
+}
+
+///////// MODIFICATION 24/07
+.container {
+	margin-top:1em;
+	background: #EA6E52;
+}
+
+.medium-8 .columns h1 {
+	text-align:center;
 }
