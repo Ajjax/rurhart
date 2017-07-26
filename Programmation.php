@@ -27,7 +27,7 @@ Template Name: Programmation
 
 
   <?php $annee = get_field('annee_de_programmation');  ?>
-  <h2><?php echo get_the_title(); ?></h2>
+    <img class="image-before" src="<?php echo get_template_directory_uri() ;?>/assets/images/Fichier1.png" alt=""><img class="image-before" src="<?php echo get_template_directory_uri() ;?>/assets/images/Fichier1.png" alt=""><h2><?php echo get_the_title(); ?></h2>
 
   <?php
   if ($annee) {
@@ -35,7 +35,10 @@ Template Name: Programmation
   $args = array('post_type' => 'artiste',  'tag_id' => $annee->term_id);
   $query = new WP_Query($args);
   ?>
-
+<br>
+<br>
+<br>
+<br>
 <!-- Boucle des artistes -->
 <?php
   if ($query->have_posts()) {
