@@ -83,11 +83,11 @@ function ajax_prog() {
     $content;
     while ($query->have_posts()) {
       $query->the_post();
-      $content .= "<div class='columns medium-3 artiste end' style='background-image:url(";
+      $content .= "<div class='padd  columns medium-3 end'><div class='columns medium-12 artiste end' style='background-image:url(";
       $content .= get_the_post_thumbnail_url($post, $size='large');
       $content .= ");'>";
       $content .= "<p>".get_the_title()."</p>";
-      $content .= "</div>";
+      $content .= "</div></div>";
     }
   }
   echo  $content;

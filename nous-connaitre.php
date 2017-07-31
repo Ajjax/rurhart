@@ -22,7 +22,7 @@ if ($query->have_posts()) {
     $query->the_post();
     ?>
 
-    
+
     <div class="article">
       <div class="row remerciements" data-equalizer data-equalize-on="medium" id="test-eq">
            <?php
@@ -31,7 +31,7 @@ if ($query->have_posts()) {
            echo "</div>";
            $image = get_the_post_thumbnail_url($post,$size='full');
         ?>
-        <div class="medium-7 columns" style="background-image:url('<?php echo $image; ?>');" data-equalizer-watch></div>
+        <div class="medium-8 columns" style="background-image:url('<?php echo $image; ?>');" data-equalizer-watch></div>
       </div>
     </div>
 
