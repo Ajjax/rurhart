@@ -23,7 +23,7 @@ Template Name: Programmation
 
   $args = array(
     'post_type' => 'artiste',
-
+'tag_id' => $annee->term_id,
     'posts_per_page' => -1
   );
   $query = new WP_Query($args);
