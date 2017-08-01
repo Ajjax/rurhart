@@ -58,7 +58,7 @@
 	text-align:center;
 }
 
-// MODIFICATION 01/08 CSS formulaire MARCHE PAS
+// MODIFICATION 01/08 CSS formulaire MARCHE  // changer la forme du formulaire
 
 .wpcf7-form-control.wpcf7-text {
 	border: transparent;
@@ -68,12 +68,16 @@
 	background-color: #0080004d;
 }
 
-// MODIF 01/08 MARCHE PAS
+wpcf7-form-control wpcf7-textarea {
+	background: red;
+}
+
+// MODIF 01/08 MARCHE PAS // réajuster le logo facebook et youtube pour l'alignement + à droite
 div.medium-2.columns img.logocontact.facebook {
 	margin-left: 50px;
 }
 
 
-p.intro {
-	background: #EA6E52;
+div.introduction > p.intro {
+	background-color: #EA6E52; //je voulais changer de couleurs les deux p (deux bandeaux différents)
 }

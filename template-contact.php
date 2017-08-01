@@ -25,9 +25,9 @@ Template Name: Contact
   </div>
 
 
-  <div>
+  <div class="introduction">
     <p class="intro">C'est à Saint-Hilaire-de-Villefranche que tu pourras nous retrouver. Cette année, le lieu se situe en Centre-ville sur la route de Saint-Savinien !</p>
-    <p class="intro2">Tu peux aussi nous laisser un petit message sur le formulaire plus bas, si tu as des questions, ou juste pour laisser un petit message ! :)
+    <p class="intro2">Tu peux aussi nous laisser un petit message sur le formulaire plus bas, si tu as des questions, ou juste pour laisser un petit message ! :)</p>
   </div>
 
 <div class="row">
