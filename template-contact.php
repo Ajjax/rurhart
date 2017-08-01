@@ -12,7 +12,7 @@ Template Name: Contact
   <div class="container">
     <div class="row" data-equalizer data-equalize-on="medium" id="test-eq">
       <div class="medium-8 columns" data-equalizer-watch>
-        <h1>Pour plus d'infos sur nous c'est ici ! </h1>
+        <h1>Suis nous sur les réseaux sociaux ! </h1>
       </div>
       <div class="medium-2 columns" data-equalizer-watch>
         <img class="logocontact facebook" src="<?php echo get_template_directory_uri(); ?>/assets/images/logofacebook.png">
@@ -26,8 +26,8 @@ Template Name: Contact
 
 
   <div>
-cde
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <p class="intro">C'est à Saint-Hilaire-de-Villefranche que tu pourras nous retrouver. Cette année, le lieu se situe en Centre-ville sur la route de Saint-Savinien !</p>
+    <p class="intro2">Tu peux aussi nous laisser un petit message sur le formulaire plus bas, si tu as des questions, ou juste pour laisser un petit message ! :)
   </div>
 
 <div class="row">

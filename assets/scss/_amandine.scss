@@ -58,7 +58,7 @@
 	text-align:center;
 }
 
-// MODIFICATION 01/08 CSS formulaire
+// MODIFICATION 01/08 CSS formulaire MARCHE PAS
 
 .wpcf7-form-control.wpcf7-text {
 	border: transparent;
@@ -68,8 +68,12 @@
 	background-color: #0080004d;
 }
 
-//
-
-div > img:first-child {
+// MODIF 01/08 MARCHE PAS
+div.medium-2.columns img.logocontact.facebook {
 	margin-left: 50px;
+}
+
+
+p.intro {
+	background: #EA6E52;
 }
