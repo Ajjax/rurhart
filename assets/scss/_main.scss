@@ -13,12 +13,6 @@ $blue :#65c2ed; /* variable de couleur déclarée */
 $orange: #ea6e52;
 $green:#77B77f;
 $grey:#EDF0F0;
-
-
-
-
-
-
 /*********************
 LINK STYLES
 *********************/
@@ -45,6 +39,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 h1, .h1 {
 
 }
+
 
 h2, .h2 {
 
@@ -102,7 +97,8 @@ NAVIGATION STYLES
 			}
 			li.active{
 				a {
-					background-color: $orange;text-decoration: none;
+
+					text-decoration: none;
 				}
 			}
 		}
@@ -129,7 +125,14 @@ POSTS & CONTENT STYLES
 
 
 // Page d accueil
-
+.padding-top-7{
+	padding: 7rem 0 3rem 0;
+}
+.orange{
+	background: $orange;
+	position: relative;
+	z-index: 100;
+}
 .content-row{
 	position: relative;
 	padding: 2rem 0;
@@ -692,9 +695,33 @@ header {
 			background: rgba(0,0,0,.8);
 		}
 	}
+.padd{
+	padding: .5rem;
+}
+	.texte_prog{
+		position: relative;
+		z-index: 100;
+				padding: 1rem;
+box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.5);
+position: absolute;
+/* width: 100%; */
+left: 0;
+margin: auto;
+right: 0;
+bottom: 0;
+transform: translateY(50%);
+background: #ea6e52;
+p{
+	color: $white;
+	text-align: center;
+	margin-bottom: 0;
+	padding: 1rem;
+}
+	}
 }
 .conteneur_artistes{
 	background-image: url('../images/banner.png');
+	padding: 0 0 3rem 0!important;
 }
 
 #titre{color: white;}
@@ -708,10 +735,17 @@ header {
 }
 .green{
 	.row.remerciements{
-
+		position: relative;
+		ul{
+			position: relative;
+			li{
+				position: relative;
+			}
+		}
 		p{position: relative;}
 		overflow: hidden;
 		.columns.medium-5{
+			z-index: 99;
 			color: $white;
 a {color:white; text-decoration: underline;}
 			position: relative;
@@ -720,24 +754,47 @@ a {color:white; text-decoration: underline;}
 				background: $green;
 				width: 100%;
 				transform: skewX(-10deg) ;
-				margin-left: -6rem;
+				margin-left: -4rem;
 	    padding-right: 45rem;
 			}
 
 			h2 {
 				position: relative;
 			}
+			ul{
+				position: relative;
+				li{
+					position: relative;
+				}
+			}
 		}
+// 		.columns.medium-8{
+// 			background-position: center;
+// 			background-position: center;
+// 			float: right;
+//     right: 0px;
+//     position: absolute;
+// 		background-repeat: no-repeat;
+// background-position: 100% 50%;
+// background-size: contain;
+// 		}
 	}
 }
 .article{
 a {color:white; text-decoration: underline;}
 	.row.remerciements{
+		position: relative;
+				ul{
+			position: relative;
+			li{
+				position: relative;
+			}
+		}
 		p{position: relative;}
 		overflow: hidden;
 		.columns.medium-5{
 			color: $white;
-
+			z-index: 99;
 			position: relative;
 			.skew-green{
 				position: absolute;
@@ -750,6 +807,7 @@ a {color:white; text-decoration: underline;}
 				position: relative;
 			}
 		}
+
 	}
 }
 
@@ -761,6 +819,15 @@ a {color:white; text-decoration: underline;}
 		transform: skewX(-10deg) ;
 	}
 	a {color:white; text-decoration: underline;}
+	.columns.medium-8{
+		background-position: center;
+		float: left;
+	right: 0px;
+	position: absolute;
+	background-repeat: no-repeat;
+// background-position: 100% 50%;
+background-size: cover;
+	}
 }
 
 
@@ -773,6 +840,15 @@ a {color:white; text-decoration: underline;}
 		background: $orange;
 		transform: skewX(9.5deg) translateX(2.5%);
 
+	}
+	.columns.medium-8{
+		background-position: center;
+		float: left;
+	left: 0px;
+	position: absolute;
+	background-repeat: no-repeat;
+// background-position: 0 50%;
+background-size: cover;
 	}
 }
 
@@ -813,6 +889,9 @@ a{color:white;}
 
 .is-dropdown-submenu{
 	 li.menu-item{
+		background: rgba(0,0,0,0.5);
+	}
+	li.menu-item:hover{
 		background: $orange;
 	}
 }
@@ -842,4 +921,40 @@ a{color:white;}
 	background: #6EB7E6;
 	transform: translateX(-40%) skewX(20deg);
 
+}
+.prog-content-row{
+	.the_content{
+		color: $white;
+	}
+}
+.menu .active > a{
+	background: $orange!important;
+}
+.col-artiste{
+	.medium-12.description{
+		display: none;
+	}
+	h3{
+		color: $white;
+	}
+	background: $orange;
+	margin: 1rem 0;
+	padding: 2rem;
+	p{
+		color: $white;
+	}
+	.columns.medium-12 img{
+		margin: 0;
+	}
+	.columns{
+
+	}
+}
+.grid-item.gigante {
+  width: 50%;
+  height: auto;
+  background: #F80;
+	.medium-12.description{
+		display: block;
+	}
 }

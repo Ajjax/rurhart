@@ -4,18 +4,9 @@
 
 <?php get_header(); ?>
 
-
-<center><div class="tab-photos2">
-  <TABLE>
-  <TR>
-    <TD><img src="http://localhost:8888/Dev/wp-content/uploads/2017/07/13988142_1597155610583801_3125596113726369945_o-min-e1500152931195.jpg" width="300"  alt="je ce je veux"></TD>
-    <TD><img src="http://localhost:8888/Dev/wp-content/uploads/2017/07/13909283_1597152880584074_570859487345729590_o.jpg" width="300"  alt="je ce je veux"></TD>
-    <TD><img src="http://localhost:8888/Dev/wp-content/uploads/2017/07/13925878_1597172150582147_8628150722564755975_o.jpg" width="300"  alt="je ce je veux"></TD>
-    <TD><img src="http://localhost:8888/Dev/wp-content/uploads/2017/07/13909167_1597155667250462_5308929691864973921_o.jpg" width="300"  alt="je ce je veux"></TD>
-  </TR>
-</TABLE>
-</div>
-</center>
+<?php
+  $texte_prog = get_field('texte_programmation');
+ ?>
 
 
 <?php
@@ -59,7 +50,8 @@ $the_query = new WP_Query( $args );
 
 
   <!-- Programmation -->
-  <div class="programmation row">
+  <div class="orange ">
+  <div class="programmation column row">
     <img class="image-before" src="<?php echo get_template_directory_uri() ;?>/assets/images/Fichier1.png" alt=""><h2 class="programmation-before">Programmation</h2>
 
     <?php
@@ -114,16 +106,16 @@ $the_query = new WP_Query( $args );
 
         // Par défaut on affiche les artistes du vendredi
 
-        $content .= "<div class='columns medium-3 artiste end' style='background-image:url(";
+        $content .= "<div class='padd  columns medium-3 end'><div class='columns artiste end' style='background-image:url(";
         $content .= get_the_post_thumbnail_url($post, $size='large');
         $content .= ");'>";
         $content .= "<p>".get_the_title()."</p>";
-        $content .= "</div>";
+        $content .= "</div></div>";
         $cpt ++;
       }
 
       // Affichage des bouton jours
-      echo "<div class='conteneur_artistes'>";
+      echo "<div class='conteneur_artistes columns'>";
       echo "<div class='columns_artiste_date'>";
       arsort($tab_date);
       foreach ($tab_date as $key) {
@@ -136,12 +128,14 @@ $the_query = new WP_Query( $args );
   </div>
 
 
-
-  <div class="">
+  <div class="column texte_prog medium-10">
+    <?php 	echo $texte_prog; ?>
+  </div>
+  <!-- <div class="">
     <?php the_field('remerciemens'); ?>
-      </div>
+      </div> -->
 </div>
-
+  </div>
 
 <!-- Fin programmation -->
 
@@ -157,9 +151,9 @@ $the_query = new WP_Query( $args );
      <div class="green">
        <div class="row remerciements" data-equalizer data-equalize-on="medium" id="test-eq">
             <?php
-            echo "<div class='columns medium-5' data-equalizer-watch ><div class='skew-green' data-equalizer-watch></div><h2>".get_the_title()."</h2>";
-            echo get_the_content();
-            echo "</div>";
+            echo "<div class='columns medium-5' data-equalizer-watch ><div class='skew-green' data-equalizer-watch></div><div class='padding-top-7'><h2>".get_the_title()."</h2><p>";
+            echo the_content();
+            echo "</p></div></div>";
             $image = get_the_post_thumbnail_url($post,$size='full');
          ?>
          <div class="medium-7 columns" style="background-image:url('<?php echo $image; ?>');" data-equalizer-watch></div>
@@ -175,7 +169,9 @@ $the_query = new WP_Query( $args );
 <?php get_footer(); ?>
 
 <script type="text/javascript">
+jQuery(document).ready(function() {
 jQuery('#cascade-slider').cascadeSlider({
 
+});
 });
 </script>

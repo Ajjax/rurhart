@@ -9,7 +9,8 @@
 		<img class="image-before" src="<?php echo get_template_directory_uri(); ?>/assets/images/Fichier2.png" alt="">
 		<h2>Un grand merci à nos partenaires</h2>
 		<?php $sponsors = array(
-			'post_type' => 'sponsor'
+			'post_type' => 'sponsor',
+			'posts_per_page' => '-1'
 		);
 		$query_sponsor = new WP_Query($sponsors);
 		 ?>

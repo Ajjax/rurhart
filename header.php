@@ -64,4 +64,34 @@
 						  To see additional nav styles, visit the /parts directory -->
 					 <?php get_template_part( 'parts/nav', 'offcanvas-topbar' ); ?>
 
+
 				</header> <!-- end .header -->
+        <div class="row columns medium-12">
+
+
+        <?php
+        $args_diapo = array(
+          'post_type' => 'diapo_head',
+          'posts_per_pages' => 4
+        );
+
+        $query_diapo_photo = new WP_query($args_diapo);
+
+        if ($query_diapo_photo->have_posts()) {
+          while ($query_diapo_photo->have_posts()) {
+            $query_diapo_photo->the_post();
+            ?>
+            <div class="medium-4 columns">
+
+
+            <?php
+            echo get_the_post_thumbnail($post, $size='medium');
+          wp_reset_postdata(); 
+            ?>
+              </div>
+            <?php
+          }
+        }
+
+         ?>
+    </div>
