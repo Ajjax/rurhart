@@ -43,10 +43,10 @@
 	max-width: 75rem;
 }
 
-.carte {
-	width: 100%;
-	height: 500px;
-}
+// .carte {
+// 	display: block;
+// 	margin: auto;
+// }
 
 ///////// MODIFICATION 24/07
 .container {
@@ -56,4 +56,20 @@
 
 .medium-8 .columns h1 {
 	text-align:center;
+}
+
+// MODIFICATION 01/08 CSS formulaire
+
+.wpcf7-form-control.wpcf7-text {
+	border: transparent;
+}
+
+.wpcf7-form-control.wpcf7-text:focus {
+	background-color: #0080004d;
+}
+
+//
+
+.facebook {
+	margin-left: 50px;	
 }

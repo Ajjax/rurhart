@@ -15,7 +15,7 @@ Template Name: Contact
         <h1>Pour plus d'infos sur nous c'est ici !</h1>
       </div>
       <div class="medium-2 columns" data-equalizer-watch>
-        <img class="logocontact" src="<?php echo get_template_directory_uri(); ?>/assets/images/logofacebook.png">
+        <img class="logocontact facebook" src="<?php echo get_template_directory_uri(); ?>/assets/images/logofacebook.png">
       </div>
       <div class="medium-2 columns" data-equalizer-watch>
         <img class="logocontact" src="<?php echo get_template_directory_uri(); ?>/assets/images/logoyoutube.png">
