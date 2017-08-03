@@ -59,7 +59,7 @@
 // Formulaire
 .container {
 	margin-top:1em;
-	background: #EA6E52;
+	// background: #EA6E52;
 }
 
 // 01/08
@@ -82,13 +82,13 @@ div.medium-2.columns img.logocontact.facebook {
 }
 
 // Test modif bg premier bandeau du contenu
-div.introduction > p.intro {
-	background-color: #EA6E52;
-}
+// div.introduction > p.intro {
+// 	background-color: #EA6E52;
+// }
 // Test 2
-div.introduction > p.intro2 {
-	background-color: pink;
-}
+// div.introduction > p.intro2 {
+// 	background-color: pink;
+// }
 
 // 3/08
 // Formulaire
@@ -117,7 +117,7 @@ div.introduction > p.intro2 {
 }
 
 textarea[rows] {
-	height:125px;
+	height:100px;
 	resize:none;
 }
 
@@ -136,4 +136,30 @@ textarea[rows] {
 
 .titres-formulaire {
 	color: #555;
+}
+
+.titre-formulaire {
+	text-align:center;
+	padding:0.5rem 1rem;
+	color:#fff;
+	border-radius:2px;
+	border:1px solid #fff;
+	display:inline-block;
+	margin-left: 6rem;
+}
+
+.grand-titre {
+	// padding:0.5rem 1rem;
+	color:#EA6E52;
+	// border-radius:2px;
+	// border:3px solid #EA6E52;
+	display:inline-block;
+	border-bottom: 3px solid #EA6E52;
+	margin-bottom: 1rem;
+}
+
+div.introduction {
+	font-family: "Open Sans", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+	color: #ea6e52;
+	font-size: 20px;
 }
