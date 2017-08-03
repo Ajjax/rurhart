@@ -12,7 +12,7 @@ Template Name: Contact
   <div class="container">
     <div class="row" data-equalizer data-equalize-on="medium" id="test-eq">
       <div class="medium-8 columns" data-equalizer-watch>
-        <h1>Suis nous sur les réseaux sociaux ! </h1>
+        <h1>Suis nous partout ! </h1>
       </div>
       <div class="medium-2 columns" data-equalizer-watch>
         <img class="logocontact facebook" src="<?php echo get_template_directory_uri(); ?>/assets/images/logofacebook.png">
