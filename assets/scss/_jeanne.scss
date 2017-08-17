@@ -230,7 +230,7 @@ footer{
 	padding:0;
 
 	.top-bar-right {
-		 > ul {
+		ul {
 			margin-right: 5rem;
 			li.menu-item {
 				padding: 0 0rem;
@@ -382,11 +382,16 @@ padding:10px;}
 }
 
 .sponsors.row{
+	margin-top: 0px;
+	margin-bottom: 0px;
 p{color:$orange}
-	h3{
+.skew-sponsor {
+    display:none;
+}
+	h2{
 		font-size: 1.5em;
 	    display: inline-block;
-	    color: $orange;
+	    color: $blue;
 	    border-width: 1px;
 	    border: 1px solid $orange;
 	    padding: 0.5rem 1rem;
