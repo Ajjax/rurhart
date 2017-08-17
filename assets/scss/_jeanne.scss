@@ -381,6 +381,11 @@ margin-top:20px;
 padding:10px;}
 }
 
+
+.skew-sponsor {
+    display:none;
+}
+
 .sponsors.row{
 	margin-top: 0px;
 	margin-bottom: 0px;
@@ -393,7 +398,7 @@ p{color:$orange}
 	    display: inline-block;
 	    color: $blue;
 	    border-width: 1px;
-	    border: 1px solid $orange;
+	    border: 1px solid $blue;
 	    padding: 0.5rem 1rem;
 			font-size:1rem;}
     margin-top: 40px;
