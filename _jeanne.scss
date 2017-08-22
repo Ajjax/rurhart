@@ -10,6 +10,17 @@ margin-left: 55rem;
 margin-top: 90px;
 p{margin-bottom: 0;}
 position: absolute;
+
+@media screen and (max-width: $break-small) {
+	margin-left: 5rem;
+	margin-top: 9px;
+}
+
+@media screen and (max-width: $break-medium) {
+	margin-left: 5rem;
+	margin-top: 9px;
+}
+
 }
 
 
