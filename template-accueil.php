@@ -5,7 +5,7 @@
 <?php get_header(); ?>
 
 
-<center><div class="tab-photos2">
+<!-- <center><div class="tab-photos2">
   <TABLE>
   <TR>
     <TD><img src="http://localhost:8888/Dev/wp-content/uploads/2017/07/13988142_1597155610583801_3125596113726369945_o-min-e1500152931195.jpg" width="300"  alt="je ce je veux"></TD>
@@ -15,7 +15,7 @@
   </TR>
 </TABLE>
 </div>
-</center>
+</center> -->
 
 
 <?php
@@ -59,8 +59,8 @@ $the_query = new WP_Query( $args );
 
 
   <!-- Programmation -->
-  <div class="programmation row">
-    <img class="image-before" src="<?php echo get_template_directory_uri() ;?>/assets/images/Fichier1.png" alt=""><h2 class="programmation-before">Programmation</h2>
+  <div class="programmation">
+    <img class="image-before" src="<?php echo get_template_directory_uri() ;?>/assets/images/Fichier1.png" alt="bannière-decorative"><img class="image-before" src="<?php echo get_template_directory_uri() ;?>/assets/images/Fichier1.png" alt="bannière-decorative"><h2 class="programmation-before">Programmation</h2>
 
     <?php
     $categorie = get_category_by_slug('programmation');
@@ -77,10 +77,7 @@ $the_query = new WP_Query( $args );
       // La requete pour aller chercher les artistes
     $args_programmation = array(
       'post_type' => 'artiste',
-      'cat' => $categorie,
-      'orderby' => 'meta_value_num',
-      'meta_key' => 'date',
-      'order' => 'ASC'
+      'cat' => $categorie
     );
     // Execute la requete
     $query_prog = new WP_Query($args_programmation);
@@ -125,7 +122,6 @@ $the_query = new WP_Query( $args );
       // Affichage des bouton jours
       echo "<div class='conteneur_artistes'>";
       echo "<div class='columns_artiste_date'>";
-      arsort($tab_date);
       foreach ($tab_date as $key) {
         echo "<a class='date click_artiste' value='".$key."'>".$key."</a>";
       }
