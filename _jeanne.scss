@@ -478,3 +478,14 @@ display: inline-block;
 }
 }
 }
+
+.marquee .row .columns .medium-12{
+	@media screen and (max-width: $break-small) {
+	display: none;
+	}
+
+	@media screen and (max-width: $break-medium) {
+	display: none;
+	}
+
+}
