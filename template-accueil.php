@@ -5,7 +5,7 @@
 <?php get_header(); ?>
 
 
-<center><div class="tab-photos2">
+<!-- <center><div class="tab-photos2">
   <TABLE>
   <TR>
     <TD><img src="http://localhost:8888/Dev/wp-content/uploads/2017/07/13988142_1597155610583801_3125596113726369945_o-min-e1500152931195.jpg" width="300"  alt="je ce je veux"></TD>
@@ -15,7 +15,7 @@
   </TR>
 </TABLE>
 </div>
-</center>
+</center> -->
 
 
 <?php
@@ -60,7 +60,7 @@ $the_query = new WP_Query( $args );
 
   <!-- Programmation -->
   <div class="programmation">
-    <img class="image-before" src="<?php echo get_template_directory_uri() ;?>/assets/images/Fichier1.png" alt=""><img class="image-before" src="<?php echo get_template_directory_uri() ;?>/assets/images/Fichier1.png" alt=""><h2 class="programmation-before">Programmation</h2>
+    <img class="image-before" src="<?php echo get_template_directory_uri() ;?>/assets/images/Fichier1.png" alt="bannière-decorative"><img class="image-before" src="<?php echo get_template_directory_uri() ;?>/assets/images/Fichier1.png" alt="bannière-decorative"><h2 class="programmation-before">Programmation</h2>
 
     <?php
     $categorie = get_category_by_slug('programmation');
