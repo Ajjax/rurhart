@@ -399,6 +399,7 @@ padding:10px;}
 	z-index: -1;
 	background: #fff;
 	transform: translateX(-40%) skewX(20deg);
+  display:none;
 }
 
 .sponsors.row{
@@ -467,7 +468,6 @@ display: inline-block;
 }
 
 
-
 .tab-photos2{
 	margin-top:20px;
 display: inline-block;
@@ -487,5 +487,4 @@ display: inline-block;
 	@media screen and (max-width: $break-medium) {
 	display: none;
 	}
-
 }
