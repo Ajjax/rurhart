@@ -5084,14 +5084,18 @@ p {
   padding: 10px; }
 
 .sponsors.row {
+  margin-top: 0px;
+  margin-bottom: 0px;
   margin-top: 40px;
   text-align: center; }
   .sponsors.row p {
     color: #ea6e52; }
-  .sponsors.row h3 {
+  .sponsors.row .skew-sponsor {
+    display: none; }
+  .sponsors.row h2 {
     font-size: 1.5em;
     display: inline-block;
-    color: #ea6e52;
+    color: #65c2ed;
     border-width: 1px;
     border: 1px solid #ea6e52;
     padding: 0.5rem 1rem;
