@@ -91,8 +91,8 @@ NAVIGATION STYLES
 	padding:0;
 
 	.top-bar-right {
-		> ul {
-			margin-right: 5rem!important;
+		ul {
+			margin-right: 5rem;
 			li.menu-item {
 				padding: 0 2rem;
 				a {
@@ -801,48 +801,4 @@ a{color:white;}
 }
 .image-before{
 	max-width: 17rem;
-}
-
-
-.content.row.contact{
-	.container{
-		.row{
-			.columns{
-				position: relative;
-			}
-		}
-	}
-}
-
-.is-dropdown-submenu{
-	 li.menu-item{
-		background: $orange;
-	}
-}
-.sponsors.row h2 {
-	display: inline-block;
-    color: $white;
-    border-width: 1px;
-    border: 1px solid $white;
-
-		font-size: 24px;
-    padding: 0.5rem 1rem;
-}
-.sponsors.row{
-	>.columns{
-		padding: 3em 2rem 2rem 2rem;
-	}
-	overflow: hidden;
-	position: relative;
-	text-align: left!important;
-}
-
-.skew-sponsor{
-	position: absolute;
-	width: 100%;
-
-	z-index: -1;
-	background: #6EB7E6;
-	transform: translateX(-40%) skewX(20deg);
-
 }
