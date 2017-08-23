@@ -27,14 +27,14 @@
 	<footer class="footer" role="contentinfo">
   <div class="centered clearfix">
     <div class="footer-logo small-6 large-3 columns">
-      <img class="logo" src="<?php echo get_template_directory_uri();?>/assets/images/logo-asso.jpg">
+      <img class="logo" alt="logo-rurhart" src="<?php echo get_template_directory_uri();?>/assets/images/logo-asso.jpg">
       <div class="social">
         <a href="https://www.facebook.com/rurhart//" class="facebook">
-          <img src="<?php echo get_template_directory_uri();?>/assets/images/facebook-logo-rond-S.png"></a>
+          <img alt="facebook" src="<?php echo get_template_directory_uri();?>/assets/images/facebook-logo-rond-S.png"></a>
         <a href="https://www.instagram.com/" class="twitter">
-          <img src="<?php echo get_template_directory_uri();?>/assets/images/Instagram.png"></a>
+          <img alt="instagram" src="<?php echo get_template_directory_uri();?>/assets/images/Instagram.png"></a>
         <a href="https://www.youtube.com/channel/UCunbWVRBbJlhGEjjTLmaRxA/" class="linkedin">
-          <img src="<?php echo get_template_directory_uri();?>/assets/images/youtube.png"></a>
+          <img alt="youtube" src="<?php echo get_template_directory_uri();?>/assets/images/youtube.png"></a>
       </div>
     </div>
     <div class="footer-contact small-6 columns large-3">
@@ -60,7 +60,7 @@
         </ul>
       </div>
     </div>
-  </div>
+
   <div class="bottom-bar">
   </div>
 
