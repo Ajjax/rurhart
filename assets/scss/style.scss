@@ -81,7 +81,7 @@ CSS file.
   position: relative;
   width: 100%;
   max-width: 75rem;
-height: 200px;
+  height: 400px;
   @include breakpoint(medium){
       height: 450px;
   }
@@ -89,7 +89,7 @@ height: 200px;
 }
 
 .cascade-slider_item {
-  background-color: white;
+  background-color: transparent;
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -105,9 +105,10 @@ height: 200px;
   opacity: 0;
   z-index: -1;
   width: 700px;
-  height: 200px;
+  height: 400px;
+  // background-color: transparent;
     @include breakpoint(medium){
-        height: 400px;
+        // height: 400px;
     }
 }
 
@@ -211,4 +212,7 @@ height: 200px;
 			right: -.2rem;
 		}
 	}
+}
+.flex-video{
+  margin-bottom: 0;
 }

@@ -18,7 +18,7 @@ $args=array(
 $the_query = new WP_Query( $args );
 ?>
 <?php if ( $the_query->have_posts() ) { ?>
-  <div class="content-row" data-equalizer data-equalize-on="medium" id="test-eq">
+  <div class="content-row columns"  data-equalize-on="small" id="test-eq">
     <div class="background-slider" data-equalizer-watch></div>
     <div class="cascade-slider_container"  id="cascade-slider" data-equalizer-watch>
       <div class="cascade-slider_slides" >
@@ -50,7 +50,7 @@ $the_query = new WP_Query( $args );
 
 
   <!-- Programmation -->
-  <div class="orange ">
+  <div class="orange columns medium-12 ">
   <div class="programmation column row">
     <img class="image-before" src="<?php echo get_template_directory_uri() ;?>/assets/images/Fichier1.png" alt=""><h2 class="programmation-before">Programmation</h2>
 

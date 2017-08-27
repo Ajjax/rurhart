@@ -66,7 +66,7 @@
 
 
 				</header> <!-- end .header -->
-        <div  class='marquee row columns medium-12' data-duration='5000' data-gap='10' data-duplicated='true'>
+        <div  class='marquee columns small-12' data-duration='15000' data-gap='0' data-duplicated='true'>
         <?php
         $args_diapo = array(
           'post_type' => 'diapo_head',
@@ -79,7 +79,7 @@
           while ($query_diapo_photo->have_posts()) {
             $query_diapo_photo->the_post();
             ?>
-            <div class="marquee-div">
+            <div class="marquee-div columns">
             <?php
             echo get_the_post_thumbnail($post, $size='medium');
           wp_reset_postdata();

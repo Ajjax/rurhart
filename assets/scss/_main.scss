@@ -135,10 +135,11 @@ POSTS & CONTENT STYLES
 }
 .content-row{
 	position: relative;
+	background: white;
 	padding: 2rem 0;
 	.background-slider{
 
-		min-height: 400px;
+		// min-height: 400px;
 		width: 100%;
 		position: absolute;
 	}
@@ -997,7 +998,17 @@ a{color:white;}
 .marquee {
   width: 100%; /* the plugin works for responsive layouts so width is not necessary */
   overflow: hidden;
+	.columns{
+		margin: 0;
+		padding: 0;
+		padding-right: 0;
+		padding-left: 0;
+	}
+	img{
+		height: 200px;
+	}
 }
-.marquee-div{
+.marquee-div.columns{
 	float: left;
+	width: auto;
 }
