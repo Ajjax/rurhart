@@ -4375,17 +4375,17 @@ NAVIGATION STYLES
   padding: 0; }
   .top-bar .title-area {
     z-index: 1; }
-  .top-bar .top-bar-right ul {
-    margin-right: 5rem; }
-    .top-bar .top-bar-right ul li.menu-item {
+  .top-bar .top-bar-right > ul {
+    margin-right: 5rem !important; }
+    .top-bar .top-bar-right > ul li.menu-item {
       padding: 0 2rem; }
-      .top-bar .top-bar-right ul li.menu-item a {
+      .top-bar .top-bar-right > ul li.menu-item a {
         color: white;
         text-decoration: none; }
-      .top-bar .top-bar-right ul li.menu-item a:hover {
+      .top-bar .top-bar-right > ul li.menu-item a:hover {
         background-color: rgba(234, 110, 82, 0.5);
         text-decoration: none; }
-    .top-bar .top-bar-right ul li.active a {
+    .top-bar .top-bar-right > ul li.active a {
       background-color: #ea6e52;
       text-decoration: none; }
 
@@ -4618,7 +4618,7 @@ FOOTER STYLES
 *********************/
 .footer {
   clear: both;
-  margin-top: 1em; }
+  margin-top: 0px; }
 
 /*********************
 FOUNDATION STYLES
@@ -4803,6 +4803,34 @@ header {
 .image-before {
   max-width: 17rem; }
 
+.content.row.contact .container .row .columns {
+  position: relative; }
+
+.is-dropdown-submenu li.menu-item {
+  background: #ea6e52; }
+
+.sponsors.row h2 {
+  display: inline-block;
+  color: #fefefe;
+  border-width: 1px;
+  border: 1px solid #fefefe;
+  font-size: 24px;
+  padding: 0.5rem 1rem; }
+
+.sponsors.row {
+  overflow: hidden;
+  position: relative;
+  text-align: left !important; }
+  .sponsors.row > .columns {
+    padding: 3em 2rem 2rem 2rem; }
+
+.skew-sponsor {
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+  background: #6EB7E6;
+  transform: translateX(-40%) skewX(20deg); }
+
 header {
   width: 100%;
   height: 350px;
@@ -4810,11 +4838,19 @@ header {
   background-position: center; }
 
 #intro {
-  margin-left: 55rem;
+  right: 2rem;
   margin-top: 90px;
   position: absolute; }
   #intro p {
     margin-bottom: 0; }
+  @media screen and (max-width: 39.9375em) {
+    #intro {
+      margin-left: 5rem;
+      margin-top: 9px; } }
+  @media screen and (max-width: 63.9375em) {
+    #intro {
+      margin-left: 5rem;
+      margin-top: 9px; } }
 
 #baseline1 {
   /*@include absolute-center;*/
@@ -4868,7 +4904,6 @@ header {
 footer {
   background: #77B77f;
   color: #fff;
-  margin-top: 50px;
   font-family: 'Source Sans Pro', sans-serif;
   padding: 10px; }
   footer h4 {
@@ -5083,6 +5118,14 @@ p {
   margin-bottom: 20px;
   padding: 10px; }
 
+.skew-sponsor {
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+  background: #fff;
+  transform: translateX(-40%) skewX(20deg);
+  display: none; }
+
 .sponsors.row {
   margin-top: 0px;
   margin-bottom: 0px;
@@ -5097,7 +5140,7 @@ p {
     display: inline-block;
     color: #65c2ed;
     border-width: 1px;
-    border: 1px solid #ea6e52;
+    border: 1px solid #65c2ed;
     padding: 0.5rem 1rem;
     font-size: 1rem; }
 
@@ -5143,6 +5186,53 @@ p {
     background-color: white; }
     .tab-photos2 table tr td {
       background-color: white; }
+
+.marquee .row .columns .medium-12 {
+  display: none; }
+  @media print, screen and (min-width: 40em) {
+    .marquee .row .columns .medium-12 {
+      display: none; } }
+
+#titre {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-left: 22em;
+  font-family: 'Source Sans Pro', sans-serif; }
+
+#title1 {
+  font-size: 25px;
+  margin-bottom: 0;
+  line-height: 25px; }
+
+#title2 {
+  font-size: 52px;
+  font-weight: 900;
+  line-height: 50px;
+  text-transform: uppercase; }
+
+#title3 {
+  font-size: 25px;
+  text-align: right;
+  line-height: 5px; }
+
+.programmation .columns_artiste_date {
+  padding-bottom: 25px; }
+
+.logocontact {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%); }
+
+.contact.content.row {
+  max-width: 75rem; }
+
+.carte {
+  display: block;
+  margin: auto; }
 
 /******************************************************************
 

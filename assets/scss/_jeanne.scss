@@ -6,17 +6,17 @@ background-position: center;
 	}
 
 #intro{
-margin-left: 55rem;
+right: 2rem;
 margin-top: 90px;
 p{margin-bottom: 0;}
 position: absolute;
 
-@media screen and (max-width: $break-small) {
+@include breakpoint(small down){
 	margin-left: 5rem;
 	margin-top: 9px;
 }
 
-@media screen and (max-width: $break-medium) {
+@include breakpoint(medium down){
 	margin-left: 5rem;
 	margin-top: 9px;
 }
@@ -480,11 +480,11 @@ display: inline-block;
 }
 
 .marquee .row .columns .medium-12{
-	@media screen and (max-width: $break-small) {
+	@include breakpoint(small) {
 	display: none;
 	}
 
-	@media screen and (max-width: $break-medium) {
+	 @include breakpoint(medium){
 	display: none;
 	}
 }
