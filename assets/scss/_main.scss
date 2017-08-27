@@ -905,12 +905,14 @@ a{color:white;}
     padding: 0.5rem 1rem;
 }
 .sponsors.row{
+
 	>.columns{
 		padding: 3em 2rem 2rem 2rem;
 	}
 	overflow: hidden;
 	position: relative;
 	text-align: left!important;
+	width: 100%;
 }
 
 .skew-sponsor{
@@ -933,13 +935,14 @@ a{color:white;}
 .col-artiste{
 	.medium-12.description{
 		display: none;
+		position: relative;
 	}
 	h3{
 		color: $white;
 	}
 	background: $orange;
-	margin: 1rem 0;
-	padding: 2rem;
+	// margin: 1rem 0;
+	// padding: 2rem;
 	p{
 		color: $white;
 	}
@@ -951,10 +954,47 @@ a{color:white;}
 	}
 }
 .grid-item.gigante {
-  width: 50%;
+	@include breakpoint(small){
+		width:100%;
+	}
+	@include breakpoint(medium){
+		width:60%;
+	}
+	@include breakpoint(xxlarge){
+		width:60%;
+	}
   height: auto;
-  background: #F80;
+  background: #cc4b37;
 	.medium-12.description{
 		display: block;
 	}
+	img{
+		max-width: 40%;
+	}
+}
+.grid-item.gigante.grid-sizer-full {
+	width: 100%;
+}
+.grid-sizer {
+	@include breakpoint(medium){
+		width: 33.3%;
+	}
+	@include breakpoint(xxlarge){
+		width: 20%;
+	}
+	@include breakpoint(small){
+		width:100%;
+	}
+}
+.grid-sizer-full {
+  width: 100%;
+}
+.col-artiste{
+	cursor: pointer;
+	background: rgb(251, 132, 105);
+	border: 1px solid #ea6e52;
+}
+.marquee {
+  width: 100%; /* the plugin works for responsive layouts so width is not necessary */
+  overflow: hidden;
 }

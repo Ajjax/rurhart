@@ -23,13 +23,17 @@ Template Name: Programmation
 
   $args = array(
     'post_type' => 'artiste',
-'tag_id' => $annee->term_id,
-    'posts_per_page' => -1
+    'tag_id' => $annee->term_id,
+    'posts_per_page' => -1,
+    'meta_key'			=> 'date_de_levènement_artistique',
+	'orderby'			=> 'meta_value',
+	'order'				=> 'ASC'
   );
   $query = new WP_Query($args);
   ?>
 <!-- Boucle des artistes -->
 <?php
+
   if ($query->have_posts()) {
     $tab_date=[];
    echo "<div class='row grid'>";
@@ -38,21 +42,42 @@ Template Name: Programmation
       $query->the_post();
 
       // vars -> on récupère le custom fields des jours
-      $field = get_field_object('date');
-      $value = $field['value'];
-      $label = $field['choices'][ $value ];
+
+
+// get raw date
+
+setup_postdata( $post );
+
+$date = get_field('date_de_levènement_artistique',$post);
+
+
+
+// $timestamp = $dtime->getTimestamp();
+// $timestamp = new DateTime($timestamp);
+// $timestamp = $timestamp->format('DD d MM, yy');
+?>
+
+
+  <?php
+
+      // $value = $field['value'];
+      // $label = $field['choices'][ $value ];
       // On rempli le tableau des jours
-      if(!in_array($label, $tab_date, true)){
+      // if(!in_array($label, $tab_date, true)){
+      //
+      //   echo "<div class='columns grid-sizer-full grid-item '>";
+      //   array_push($tab_date, $label);
+      //   echo "<h2>".$label."</h2></div>";
+      // }
 
-        echo "<div class='columns'>";
-        array_push($tab_date, $label);
-        echo "<h2>".$label."</h2></div>";
-      }
-
-      echo "<div class=' columns medium-3 col-artiste end grid-item'>";
+      echo "<div class=' columns col-artiste end grid-item grid-sizer'>";
 
         echo "<h3>".get_the_title()."</h3>";
+
+        echo $date;
+    
         echo "<div class='row columns medium-12'><div class='medium-12 columns'>";
+
       echo get_the_post_thumbnail($post, $size='large');
 
       echo "</div><div class='columns medium-12 description'><p>";
@@ -60,6 +85,7 @@ Template Name: Programmation
       echo "</p></div>";
       // Infos des groupes
       echo "</div></div>";
+      wp_reset_postdata();
     }
 echo "</div>";
   }
@@ -75,9 +101,10 @@ echo "</div>";
 <script type="text/javascript">
 jQuery(document).ready(function() {
 var $grid = jQuery('.grid').isotope({
+  itemSelector: '.grid-item ',
    percentPosition: true,
 masonry: {
-  columnWidth: 25
+  columnWidth:'.grid-sizer'
 }
 });
 
@@ -86,6 +113,9 @@ $grid.imagesLoaded().progress( function() {
 });
 // change size of item by toggling gigante class
 $grid.on( 'click', '.grid-item', function() {
+  if(jQuery(this).hasClass('gigante') == false){
+    jQuery('.gigante').toggleClass('gigante');
+  }
 jQuery(this).toggleClass('gigante');
 // trigger layout after item size changes
 $grid.isotope('layout');

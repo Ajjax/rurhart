@@ -66,7 +66,7 @@
 
 
 				</header> <!-- end .header -->
-        <div class="row columns medium-12">
+        <div  class='marquee row columns medium-12' data-duration='5000' data-gap='10' data-duplicated='true'>
 
 
         <?php
@@ -86,7 +86,7 @@
 
             <?php
             echo get_the_post_thumbnail($post, $size='medium');
-          wp_reset_postdata(); 
+          wp_reset_postdata();
             ?>
               </div>
             <?php
