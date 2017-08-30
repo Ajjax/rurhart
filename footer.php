@@ -1,16 +1,23 @@
 
-	<div class="sponsors row">
-		<h3>Un grand merci à nos partenaires</h3>
+	<div class="sponsors row" data-equalizer data-equalize-on="medium" id="test-eq">
+		<div class="skew-sponsor" data-equalizer-watch>
+
+		</div>
+		<div class="columns" data-equalizer-watch>
+
+
+		<img class="image-before" src="<?php echo get_template_directory_uri(); ?>/assets/images/Fichier2.png" alt="">
+		<h2>Un grand merci à nos partenaires</h2>
 		<?php $sponsors = array(
 			'post_type' => 'sponsor',
 			'posts_per_page' => '-1'
 		);
 		$query_sponsor = new WP_Query($sponsors);
 		 ?>
-		<div class="columns medium-12">
+		<div class="columns medium-12" >
 			<?php if ($query_sponsor->have_posts()): while ($query_sponsor->have_posts()) {
 				$query_sponsor->the_post();
-				echo get_the_title();
+				// echo get_the_title();
 				echo get_the_post_thumbnail($post,$size='full');
 			} ?>
 
@@ -18,6 +25,7 @@
 			<br>
 			<p> Et n'oubliez pas une chose importante : RESPECTONS L'ENVIRONNEMENT ! Et pensez au covoiturage (moins de dépenses d'essence = plus de bières ! </p>
 
+		</div>
 		</div>
 	</div>
 
@@ -27,14 +35,14 @@
 	<footer class="footer" role="contentinfo">
   <div class="centered clearfix">
     <div class="footer-logo small-6 large-3 columns">
-      <img class="logo" alt="logo-rurhart" src="<?php echo get_template_directory_uri();?>/assets/images/logo-asso.jpg">
+      <img class="logo" src="<?php echo get_template_directory_uri();?>/assets/images/logo-asso.jpg">
       <div class="social">
         <a href="https://www.facebook.com/rurhart//" class="facebook">
-          <img alt="facebook" src="<?php echo get_template_directory_uri();?>/assets/images/facebook-logo-rond-S.png"></a>
+          <img src="<?php echo get_template_directory_uri();?>/assets/images/facebook-logo-rond-S.png"></a>
         <a href="https://www.instagram.com/" class="twitter">
-          <img alt="instagram" src="<?php echo get_template_directory_uri();?>/assets/images/Instagram.png"></a>
+          <img src="<?php echo get_template_directory_uri();?>/assets/images/Instagram.png"></a>
         <a href="https://www.youtube.com/channel/UCunbWVRBbJlhGEjjTLmaRxA/" class="linkedin">
-          <img alt="youtube" src="<?php echo get_template_directory_uri();?>/assets/images/youtube.png"></a>
+          <img src="<?php echo get_template_directory_uri();?>/assets/images/youtube.png"></a>
       </div>
     </div>
     <div class="footer-contact small-6 columns large-3">
@@ -60,7 +68,7 @@
         </ul>
       </div>
     </div>
-
+  </div>
   <div class="bottom-bar">
   </div>
 
@@ -88,5 +96,4 @@ duplicated: true
 });
 		</script>
 	</body>
-</html> <!-- end page -->
 	</html> <!-- end page -->

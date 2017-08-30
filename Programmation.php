@@ -35,47 +35,43 @@ Template Name: Programmation
 <?php
 
   if ($query->have_posts()) {
-    $tab_date=[];
-   echo "<div class='row grid'>";
+    $array = array();
+    $close = false;
     while ($query->have_posts()) {
-
       $query->the_post();
-
-      // vars -> on récupère le custom fields des jours
-
-
-// get raw date
-
-setup_postdata( $post );
-
+      setup_postdata( $post );
 $date = get_field('date_de_levènement_artistique',$post);
 
+$lejour = explode(',',$date);
+if (!in_array($lejour[0], $array)) {
+  array_push($array,$lejour[0]);
+  if ($close == true) {
+     echo "</div>";
+  }
+  echo "<div class='grid-item grid-sizer-full'><p><i class='fa fa-calendar' aria-hidden='true'><span>".$lejour[0]."</span></i></p></div>";
+
+  echo "<div class='row columns grid'>";
+
+  $close = true;
+}
+else{
+  $close = false;
+  }
+  if ($close == true) {
+
+  }
+      echo "<div class=' col-artiste grid-item grid-sizer'>";
+
+        $time = explode('-',$date);
+        if (!$time[1]) {
+        $time[1] =' A venir';
+        }
+
+        echo "<h4>".get_the_title()."</h4><i class='fa fa-clock-o' aria-hidden='true'><span>".$time[1]."</span></i>";
 
 
-// $timestamp = $dtime->getTimestamp();
-// $timestamp = new DateTime($timestamp);
-// $timestamp = $timestamp->format('DD d MM, yy');
-?>
 
 
-  <?php
-
-      // $value = $field['value'];
-      // $label = $field['choices'][ $value ];
-      // On rempli le tableau des jours
-      // if(!in_array($label, $tab_date, true)){
-      //
-      //   echo "<div class='columns grid-sizer-full grid-item '>";
-      //   array_push($tab_date, $label);
-      //   echo "<h2>".$label."</h2></div>";
-      // }
-
-      echo "<div class=' columns col-artiste end grid-item grid-sizer'>";
-
-        echo "<h3>".get_the_title()."</h3>";
-
-        echo $date;
-    
         echo "<div class='row columns medium-12'><div class='medium-12 columns'>";
 
       echo get_the_post_thumbnail($post, $size='large');
@@ -85,9 +81,12 @@ $date = get_field('date_de_levènement_artistique',$post);
       echo "</p></div>";
       // Infos des groupes
       echo "</div></div>";
+
       wp_reset_postdata();
+
+
     }
-echo "</div>";
+    echo "</div>";
   }
     }
  ?>
@@ -101,7 +100,7 @@ echo "</div>";
 <script type="text/javascript">
 jQuery(document).ready(function() {
 var $grid = jQuery('.grid').isotope({
-  itemSelector: '.grid-item ',
+  itemSelector: '.grid-item',
    percentPosition: true,
 masonry: {
   columnWidth:'.grid-sizer'

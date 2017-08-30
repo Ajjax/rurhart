@@ -47,95 +47,75 @@ $the_query = new WP_Query( $args );
 
 
 
-
-
   <!-- Programmation -->
   <div class="orange columns medium-12 ">
-  <div class="programmation column row">
-    <img class="image-before" src="<?php echo get_template_directory_uri() ;?>/assets/images/Fichier1.png" alt=""><h2 class="programmation-before">Programmation</h2>
-
-    <?php
-    $categorie = get_category_by_slug('programmation');
-    $categorie = $categorie->term_id;
-    $categories = get_categories (array(
-      'parent' =>  $categorie,
-      'orderby' => 'date',
-      'order' => 'name'
-    )
-    );
-    // var_dump($categories);
-    $categorie = $categories[0]->term_id;
-    // var_dump($categorie);
-      // La requete pour aller chercher les artistes
-    $args_programmation = array(
-      'post_type' => 'artiste',
-      'cat' => $categorie,
-      'orderby' => 'meta_value_num',
-      'meta_key' => 'date',
-      'order' => 'ASC'
-    );
-    // Execute la requete
-    $query_prog = new WP_Query($args_programmation);
-
-    ?>
-    <!-- Boucle qui affiche les artistes -->
-    <?php if ($query_prog->have_posts()) {
-      //  Tableau des jours
-      $tab_date=[];
-
-      //  contenu des artistes
-      $content='';
-
-      //  compteur de loop
-      $cpt=0;
-
-      while ($query_prog->have_posts()) {
-        $query_prog->the_post();
-        ?>
+    <div class="programmation column row">
+      <div class="medium-12 columns day">
+        <img class="image-before" src="<?php echo get_template_directory_uri() ;?>/assets/images/Fichier1.png" alt=""><h2 class="programmation-before">Programmation</h2>
+      </div>
         <?php
+          $page = get_page_by_title( 'Programme du festival');
+          // var_dump($page);
+          $annee = get_field('annee_de_programmation', $page->ID);
+          $args_programmation = array(
+            'post_type' => 'artiste',
+            'tag_id' => $annee->term_id,
+            'posts_per_page' => -1,
+            'meta_key'			=> 'date_de_levènement_artistique',
+  	         'orderby'			=> 'meta_value',
+  	          'order'				=> 'ASC'
+            );
+            // Execute la requete
+            $query_prog = new WP_Query($args_programmation);
 
-        // vars -> on récupère le custom fields des jours
-        $field = get_field_object('date');
-        $value = $field['value'];
-        $label = $field['choices'][ $value ];
-
-        // On rempli le tableau des jours
-        if(!in_array($label, $tab_date, true)){
-          array_push($tab_date, $label);
-        }
-
-        // Par défaut on affiche les artistes du vendredi
-
-        $content .= "<div class='padd  columns medium-3 end'><div class='columns artiste end' style='background-image:url(";
-        $content .= get_the_post_thumbnail_url($post, $size='large');
-        $content .= ");'>";
-        $content .= "<p>".get_the_title()."</p>";
-        $content .= "</div></div>";
-        $cpt ++;
-      }
-
-      // Affichage des bouton jours
-      echo "<div class='conteneur_artistes columns'>";
-      echo "<div class='columns_artiste_date'>";
-      arsort($tab_date);
-      foreach ($tab_date as $key) {
-        echo "<a class='date click_artiste' value='".$key."'>".$key."</a>";
-      }
-      echo "</div>";
-      // affichage des columns des artistes
-      echo "<div class=' row ajax_artiste'> ".$content."</div>";
-    } ?>
-  </div>
+            if ($query_prog->have_posts()) {
+                $array = array();
+              while ($query_prog->have_posts()) {
+                $query_prog->the_post();
 
 
-  <div class="column texte_prog medium-10">
-    <?php 	echo $texte_prog; ?>
-  </div>
-  <!-- <div class="">
-    <?php the_field('remerciemens'); ?>
-      </div> -->
-</div>
-  </div>
+                setup_postdata( $post );
+
+                $date = get_field('date_de_levènement_artistique',$post);
+
+                $lejour = explode(',',$date);
+
+                  // if (!in_array($lejour[0], $array)) {
+                  //   array_push($array,$lejour[0]);
+                  //   echo "<div class='columns medium-12'><p><i class='fa fa-calendar' aria-hidden='true'> ".$lejour[0]."</i></p></div>";
+                  // }
+
+                  echo "<div class='columns medium-3'>";
+
+                  $time = explode('-',$date);
+                  if (!$time[1]) {
+                    $time[1] =' A venir';
+                  }
+
+                  echo "<div class='row columns medium-12'  style='background-image:url(".get_the_post_thumbnail_url($post, $size='medium').");background-size:cover;width:100%;height:200px;'><figcaption><h3>".get_the_title()."</h3><p><i class='fa fa-calendar' aria-hidden='true'><span>".$lejour[0]."</span></i> <i class='fa fa-clock-o' aria-hidden='true'>".$time[1]."</i></p></figcaption><div class='medium-12 columns'>";
+
+      // Infos des groupes
+                  echo "</div></div></div>";
+                  wp_reset_postdata();
+                }
+              } ?>
+            <div class="columns medium-12 show-prg">
+
+              <?php
+              $page = get_page_by_title( 'Programme du festival');
+              $url = get_permalink($page->ID);
+
+               ?>
+              <a href="<?php echo $url;?>">Détails de la programmation</a>
+            </div>
+            </div>
+            <div class="column texte_prog medium-10">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+          </div>
+
+
+
 
 <!-- Fin programmation -->
 

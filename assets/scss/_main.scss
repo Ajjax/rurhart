@@ -649,12 +649,74 @@ header {
 			}
 		}
 } }
-
+.orange{
+	.texte_prog{
+		position: relative;
+		z-index: 100;
+				padding: 1rem;
+box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.5);
+position: absolute;
+/* width: 100%; */
+left: 0;
+margin: auto;
+right: 0;
+bottom: 0;
+transform: translateY(50%);
+background: #ea6e52;
+p{
+	color: $white;
+	text-align: center;
+	margin-bottom: 0;
+	padding: 1rem;
+}
+	}
+}
 .programmation{
+	.day{
+		img{
+			padding: 0!important;
+		}
+	}
+	.show-prg a:hover{
+		background: rgba(0,0,0,.5);
+	}
+.show-prg{
+	margin: 1rem 0 0 0;
+
+	a{
+		float: right;
+		padding: 0.5rem 1rem;
+		color: white;
+    border: 1px solid white;
+	}
+}
 	// margin-top: -6rem;
-	padding: 5em 2rem 2rem 2rem;
+	padding: 5em 2rem 7rem 2rem;
 	z-index: 99;
 	position: relative;
+	.columns.medium-3{
+		position: relative;
+		.columns{
+			position: relative;
+		}
+	}
+	figcaption{
+		color: white;
+		background: rgba(0,0,0,0.5);
+		padding:.5rem  1rem;
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		left: 0;
+		right: 0;
+		h3{
+			padding: 0;
+			margin-bottom: 0;
+		}
+		p{
+			margin-bottom: 0;
+		}
+		}
 	h2{
 		border: 2px solid $white;
 		display: inline-block;
@@ -699,26 +761,7 @@ header {
 .padd{
 	padding: .5rem;
 }
-	.texte_prog{
-		position: relative;
-		z-index: 100;
-				padding: 1rem;
-box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.5);
-position: absolute;
-/* width: 100%; */
-left: 0;
-margin: auto;
-right: 0;
-bottom: 0;
-transform: translateY(50%);
-background: #ea6e52;
-p{
-	color: $white;
-	text-align: center;
-	margin-bottom: 0;
-	padding: 1rem;
-}
-	}
+
 }
 .conteneur_artistes{
 	background-image: url('../images/banner.png');
@@ -759,7 +802,7 @@ a {color:white; text-decoration: underline;}
 	    padding-right: 45rem;
 			}
 
-			
+
 
 			h2 {
 				position: relative;
@@ -795,16 +838,22 @@ a {color:white; text-decoration: underline;}
 		}
 		p{position: relative;}
 		overflow: hidden;
-		.columns.medium-5{
+		.columns.medium-6{
 			color: $white;
 			z-index: 99;
 			position: relative;
 			.skew-green{
 				position: absolute;
 				width: 100%;
+// @include breakpoint(large){
+// 	margin-left: -6rem;
+// 	padding-right: 45rem;
+// }
+// @include breakpoint(medium){
+// 	// margin-left: -6rem;
+// 	padding-right: 24rem;
+// }
 
-				margin-left: -6rem;
-	    padding-right: 45rem;
 		}
 			h2 {
 				position: relative;
@@ -836,12 +885,25 @@ background-size: cover;
 
 
 .article:nth-child(odd){
-	.columns.medium-5{
+	.columns.medium-6{
 		float: right;
+
 	}
 	.skew-green{
 		background: $orange;
 		transform: skewX(9.5deg) translateX(2.5%);
+		@include breakpoint(medium){
+			margin-left: -6rem;
+			padding-right: 24rem;
+		}
+		@include breakpoint(large){
+			margin-left: -6rem;
+			padding-right: 24rem;
+		}
+		@include breakpoint(xlarge){
+		 margin-left: -6rem;
+		 padding-right: 47rem;
+	 }
 
 	}
 	.columns.medium-8{
@@ -950,35 +1012,59 @@ a{color:white;}
 		color: $white;
 	}
 	.columns.medium-12 img{
-		margin: 0;
+		margin:auto;
+		display: block;
 	}
 	.columns{
 
 	}
 }
 .grid-item.gigante {
+	padding: 1rem;
 	@include breakpoint(small){
 		width:100%;
 	}
 	@include breakpoint(medium){
-		width:60%;
+		width:80%;
 	}
 	@include breakpoint(xxlarge){
-		width:60%;
+		width:80%;
 	}
   height: auto;
   background: #cc4b37;
-	.medium-12.description{
-		display: block;
+	.row.columns.medium-12{
+		.medium-12.columns{
+			width: 20%;
+			img{
+				max-width: 100%;
+				float: left;
+			}
+		}
+		.medium-12.columns.description{
+			display: block;
+			width: 80%;
+		}
 	}
-	img{
-		max-width: 40%;
-	}
+
+
 }
-.grid-item.gigante.grid-sizer-full {
+.grid-sizer-full {
+	margin-top: 1rem;
+	p{
+		border-style: solid;
+border-width: 0 1px 19px 0px;
+-moz-border-image: url(../images/lampion.png) 0 1 19 0 repeat;
+-webkit-border-image: url(../images/lampion.png) 0 1 19 0 repeat;
+-o-border-image: url(../images/lampion.png) 0 1 19 0 repeat;
+border-image: url(../images/lampion.png) 0 1 19 0 fill repeat;
+
+	}
 	width: 100%;
+	color: white;
+	text-transform: uppercase;
 }
 .grid-sizer {
+	padding: 1rem;
 	@include breakpoint(medium){
 		width: 33.3%;
 	}
@@ -996,7 +1082,11 @@ a{color:white;}
 	cursor: pointer;
 	background: rgb(251, 132, 105);
 	border: 1px solid #ea6e52;
+	p{
+		font-size: 16px;
+	}
 }
+
 .marquee {
   width: 100%; /* the plugin works for responsive layouts so width is not necessary */
   overflow: hidden;
@@ -1013,4 +1103,13 @@ a{color:white;}
 .marquee-div.columns{
 	float: left;
 	width: auto;
+}
+.fa span{
+	font-family: 'Open Sans';
+}
+.fa{
+	font-size: 1.5rem!important;
+}
+.fa:before{
+	padding: .5rem;
 }
