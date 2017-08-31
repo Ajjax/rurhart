@@ -93,7 +93,7 @@ $the_query = new WP_Query( $args );
                     $time[1] =' A venir';
                   }
 
-                  echo "<div class='row columns medium-12'  style='background-image:url(".get_the_post_thumbnail_url($post, $size='medium').");background-size:cover;width:100%;height:200px;'><figcaption><h3>".get_the_title()."</h3><p><i class='fa fa-calendar' aria-hidden='true'><span>".$ladate."</span></i> <i class='fa fa-clock-o' aria-hidden='true'>".$time[1]."</i></p></figcaption><div class='medium-12 columns'>";
+                  echo "<div class='row columns medium-12'  style='background-image:url(".get_the_post_thumbnail_url($post, $size='medium').");background-size:cover;width:100%;height:200px;'><figcaption><h5>".get_the_title()."</h5><p><i class='fa fa-calendar' aria-hidden='true'><span>".$ladate."</span></i> <i class='fa fa-clock-o' aria-hidden='true'>".$time[1]."</i></p></figcaption><div class='medium-12 columns'>";
 
       // Infos des groupes
                   echo "</div></div></div>";
