@@ -4,7 +4,11 @@ Template Name: Programmation
 */
  ?>
 
-<?php get_header(); ?>
+<?php get_header();
+
+
+  setlocale(LC_TIME, 'fr_FR.utf8','fra');
+ ?>
 
 <!-- Content -->
 
@@ -17,10 +21,10 @@ Template Name: Programmation
 
   <?php $annee = get_field('annee_de_programmation');  ?>
     <img class="image-before" src="<?php echo get_template_directory_uri() ;?>/assets/images/Fichier1.png" alt=""><img class="image-before" src="<?php echo get_template_directory_uri() ;?>/assets/images/Fichier1.png" alt=""><h2><?php echo get_the_title(); ?></h2>
-
   <?php
   if ($annee) {
-
+    $array = array();
+    $content='';
   $args = array(
     'post_type' => 'artiste',
     'tag_id' => $annee->term_id,
@@ -33,64 +37,51 @@ Template Name: Programmation
   ?>
 <!-- Boucle des artistes -->
 <?php
-
   if ($query->have_posts()) {
-    $array = array();
-    $close = false;
+    $cpt = 0;
     while ($query->have_posts()) {
       $query->the_post();
-      setup_postdata( $post );
-$date = get_field('date_de_levènement_artistique',$post);
+      setup_postdata($post);
+      $date = get_field('date_de_levènement_artistique',$post);
+      $lejour = explode('-',$date);
+      $ladate = date_i18n("l j F", strtotime($lejour[0]));
 
-$lejour = explode(',',$date);
-if (!in_array($lejour[0], $array)) {
-  array_push($array,$lejour[0]);
-  if ($close == true) {
-     echo "</div>";
-  }
-  echo "<div class='grid-item grid-sizer-full'><p><i class='fa fa-calendar' aria-hidden='true'><span>".$lejour[0]."</span></i></p></div>";
-
-  echo "<div class='row columns grid'>";
-
-  $close = true;
-}
-else{
-  $close = false;
-  }
-  if ($close == true) {
-
-  }
-      echo "<div class=' col-artiste grid-item grid-sizer'>";
-
-        $time = explode('-',$date);
-        if (!$time[1]) {
-        $time[1] =' A venir';
+      if (!in_array($ladate, $array)) {
+        array_push($array,$ladate);
+        if ($cpt != 0) {
+          $content .='</div>';
+        }
+        $content.="<div class='grid-item grid-sizer-full'><p><i class='fa fa-calendar' aria-hidden='true'><span>".$ladate."</span></i></p></div>";
+        $content.= "<div class='row grid columns'>";
         }
 
-        echo "<h4>".get_the_title()."</h4><i class='fa fa-clock-o' aria-hidden='true'><span>".$time[1]."</span></i>";
+        // On ajoute le jour entete
+        // Grid
+          $content.="<div class='col-artiste grid-item grid-sizer'>";
+            $time = explode('-',$date); if (!$time[1]) { $time[1] =' A venir'; }
+            $content.="<h4>".get_the_title()."</h4><i class='fa fa-clock-o' aria-hidden='true'><span>".$time[1]."</span></i>";
 
+            $content.="<div class='row columns medium-12'><div class='medium-12 columns'>";
+              $content.= get_the_post_thumbnail($post, $size='large');
+            $content.= "</div>";
 
+            $content.="<div class='columns medium-12 description'><p>";
+        $content.= get_field('description');
+        $content.= "</p></div>";
 
-
-        echo "<div class='row columns medium-12'><div class='medium-12 columns'>";
-
-      echo get_the_post_thumbnail($post, $size='large');
-
-      echo "</div><div class='columns medium-12 description'><p>";
-      echo the_field('description');
-      echo "</p></div>";
-      // Infos des groupes
-      echo "</div></div>";
-
-      wp_reset_postdata();
-
-
+        $content.="</div>";
+        // Col artiste Close
+        $content.="</div>";
+        $cpt++;
+        wp_reset_postdata();
     }
-    echo "</div>";
+
   }
+  echo $content;
     }
  ?>
-</div>
+ </div>
+ </div>
 </div>
 
 <!-- Footer -->
