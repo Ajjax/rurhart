@@ -4,7 +4,11 @@ Template Name: Programmation
 */
  ?>
 
-<?php get_header(); ?>
+<?php get_header();
+
+
+  setlocale(LC_TIME, 'fr_FR.utf8','fra');
+ ?>
 
 <!-- Content -->
 
@@ -17,10 +21,10 @@ Template Name: Programmation
 
   <?php $annee = get_field('annee_de_programmation');  ?>
     <img class="image-before" src="<?php echo get_template_directory_uri() ;?>/assets/images/Fichier1.png" alt=""><img class="image-before" src="<?php echo get_template_directory_uri() ;?>/assets/images/Fichier1.png" alt=""><h2><?php echo get_the_title(); ?></h2>
-
   <?php
   if ($annee) {
-
+    $array = array();
+    $content='';
   $args = array(
     'post_type' => 'artiste',
     'tag_id' => $annee->term_id,
@@ -33,65 +37,51 @@ Template Name: Programmation
   ?>
 <!-- Boucle des artistes -->
 <?php
-
   if ($query->have_posts()) {
-    $tab_date=[];
-   echo "<div class='row grid'>";
+    $cpt = 0;
     while ($query->have_posts()) {
-
       $query->the_post();
+      setup_postdata($post);
+      $date = get_field('date_de_levènement_artistique',$post);
+      $lejour = explode('-',$date);
+      $ladate = date_i18n("l j F", strtotime($lejour[0]));
 
-      // vars -> on récupère le custom fields des jours
+      if (!in_array($ladate, $array)) {
+        array_push($array,$ladate);
+        if ($cpt != 0) {
+          $content .='</div>';
+        }
+        $content.="<div class='grid-item grid-sizer-full'><p><i class='fa fa-calendar' aria-hidden='true'><span>".$ladate."</span></i></p></div>";
+        $content.= "<div class='row grid columns'>";
+        }
 
+        // On ajoute le jour entete
+        // Grid
+          $content.="<div class='col-artiste grid-item grid-sizer'>";
+            $time = explode('-',$date); if (!$time[1]) { $time[1] =' A venir'; }
+            $content.="<h4>".get_the_title()."</h4><i class='fa fa-clock-o' aria-hidden='true'><span>".$time[1]."</span></i>";
 
-// get raw date
+            $content.="<div class='row columns medium-12'><div class='medium-12 columns'>";
+              $content.= get_the_post_thumbnail($post, $size='large');
+            $content.= "</div>";
 
-setup_postdata( $post );
+            $content.="<div class='columns medium-12 description'><p>";
+        $content.= get_field('description');
+        $content.= "</p></div>";
 
-$date = get_field('date_de_levènement_artistique',$post);
-
-
-
-// $timestamp = $dtime->getTimestamp();
-// $timestamp = new DateTime($timestamp);
-// $timestamp = $timestamp->format('DD d MM, yy');
-?>
-
-
-  <?php
-
-      // $value = $field['value'];
-      // $label = $field['choices'][ $value ];
-      // On rempli le tableau des jours
-      // if(!in_array($label, $tab_date, true)){
-      //
-      //   echo "<div class='columns grid-sizer-full grid-item '>";
-      //   array_push($tab_date, $label);
-      //   echo "<h2>".$label."</h2></div>";
-      // }
-
-      echo "<div class=' columns col-artiste end grid-item grid-sizer'>";
-
-        echo "<h3>".get_the_title()."</h3>";
-
-        echo $date;
-    
-        echo "<div class='row columns medium-12'><div class='medium-12 columns'>";
-
-      echo get_the_post_thumbnail($post, $size='large');
-
-      echo "</div><div class='columns medium-12 description'><p>";
-      echo the_field('description');
-      echo "</p></div>";
-      // Infos des groupes
-      echo "</div></div>";
-      wp_reset_postdata();
+        $content.="</div>";
+        // Col artiste Close
+        $content.="</div>";
+        $cpt++;
+        wp_reset_postdata();
     }
-echo "</div>";
+
   }
+  echo $content;
     }
  ?>
-</div>
+ </div>
+ </div>
 </div>
 
 <!-- Footer -->
@@ -101,7 +91,7 @@ echo "</div>";
 <script type="text/javascript">
 jQuery(document).ready(function() {
 var $grid = jQuery('.grid').isotope({
-  itemSelector: '.grid-item ',
+  itemSelector: '.grid-item',
    percentPosition: true,
 masonry: {
   columnWidth:'.grid-sizer'

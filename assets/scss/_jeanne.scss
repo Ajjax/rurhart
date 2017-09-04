@@ -289,7 +289,7 @@ padding: 0;
 		}
 		margin-right: auto;
 
-		.columns.medium-5
+		.columns.medium-6
 		{
 
 			>h2
@@ -329,6 +329,16 @@ padding: 0;
 
 	.skew-green{
 		background: $green;
+
+
+	 @include breakpoint(large){
+		 margin-left: 1rem;
+		 padding-right: 24rem;
+	 }
+	 @include breakpoint(xlarge){
+		// margin-left: -6rem;
+		padding-right: 47rem;
+	}
 	}
 	a {position: relative;}
 	p{position: relative;}
@@ -340,12 +350,21 @@ padding: 0;
 	color: white;
 		text-decoration: underline;
 }
-	.columns.medium-5{
+	.columns.medium-6{
 		float: right;
 	}
 	.skew-green{
 		background: $orange;
      transform: skewX(9.5deg) translateX(2.5%);
+		 @include breakpoint(large){
+			 margin-left: -6rem;
+			 padding-right: 24rem;
+		 }
+		 @include breakpoint(xlarge){
+ 			margin-left: -6rem;
+ 			padding-right: 47rem;
+ 		}
+
 	}
 }
 
@@ -437,7 +456,7 @@ font-size: 24px;
 
 
 .programmation{
-	padding: 3em 2rem 2rem 2rem;
+	padding: 3em 2rem 7rem 2rem;
 	h2 {font-size:24px;
 	padding: 0.5rem 1rem;
 border: 1px solid white;}

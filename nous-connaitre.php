@@ -26,12 +26,13 @@ if ($query->have_posts()) {
     <div class="article">
       <div class="row remerciements" data-equalizer data-equalize-on="medium" id="test-eq">
            <?php
-           echo "<div class='columns medium-5' data-equalizer-watch ><div class='skew-green' data-equalizer-watch></div><h2>".get_the_title()."</h2>";
+           echo "<div class='columns medium-6 xlarge-5' data-equalizer-watch ><div class='skew-green' data-equalizer-watch></div><h2>".get_the_title()."</h2>";
            echo the_content();
            echo "</div>";
            $image = get_the_post_thumbnail_url($post,$size='full');
         ?>
-        <div class="medium-8 columns" style="background-image:url('<?php echo $image; ?>');" data-equalizer-watch></div>
+        <div class="medium-8 columns" style="background-image:url('<?php echo $image; ?>');background-position: center;
+    background-size: cover;" data-equalizer-watch></div>
       </div>
     </div>
 
