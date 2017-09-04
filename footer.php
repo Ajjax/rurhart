@@ -37,7 +37,7 @@
     <div class="footer-logo small-6 large-3 columns">
       <img class="logo" src="<?php echo get_template_directory_uri();?>/assets/images/logo-asso.jpg">
       <div class="social">
-        <a href="https://www.facebook.com/rurhart//" class="facebook">
+        <a href="https://www.facebook.com/rurhart/" class="facebook">
           <img src="<?php echo get_template_directory_uri();?>/assets/images/facebook-logo-rond-S.png"></a>
         <a href="https://www.instagram.com/" class="twitter">
           <img src="<?php echo get_template_directory_uri();?>/assets/images/Instagram.png"></a>
