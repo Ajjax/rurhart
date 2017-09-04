@@ -66,6 +66,9 @@
 
 
 				</header> <!-- end .header -->
+        <?php if (is_page('contact') || is_front_page() || is_home()) {
+
+        ?>
         <div  class='marquee columns small-12' data-duration='15000' data-gap='0' data-duplicated='true'>
         <?php
         $args_diapo = array(
@@ -91,3 +94,5 @@
 
          ?>
     </div>
+    <?php
+    } ?>
