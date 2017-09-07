@@ -45,10 +45,6 @@
 	max-width: 75rem;
 }
 
-// .carte {
-// 	display: block;
-// 	margin: auto;
-// }
 
 // MODIFICATION 24/07
 // Mise en page de la page contact
@@ -62,36 +58,11 @@
 	// background: #EA6E52;
 }
 
-// 01/08
-// formulaire
-// .wpcf7-form-control.wpcf7-text {
-// 	border: transparent;
-// }
-
-// .wpcf7-form-control.wpcf7-text:focus {
-// 	background-color: #008000;
-// }
-
-// textarea {
-// 	background-color: orange;
-// }
-
 // Réajustement logos côté titre avec alignement
 div.medium-2.columns img.logocontact.facebook {
 	margin-left: 50px;
 }
 
-// Test modif bg premier bandeau du contenu
-// div.introduction > p.intro {
-// 	background-color: #EA6E52;
-// }
-// Test 2
-// div.introduction > p.intro2 {
-// 	background-color: pink;
-// }
-
-// 3/08
-// Formulaire
 .wpcf7 {
 	background-color: #77B77f/*#b6deb6*/;
 	border: solid #77B77f/*#b6deb6*/ 1px;
@@ -132,10 +103,6 @@ textarea[rows] {
 	font-size: 15px;
 	border: transparent;
 	box-shadow:1px 1px 3px #999;
-}
-
-.titres-formulaire {
-	color: #fff;
 }
 
 .titre-formulaire {

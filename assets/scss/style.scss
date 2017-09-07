@@ -81,7 +81,7 @@ CSS file.
   position: relative;
   width: 100%;
   max-width: 75rem;
-  height: 400px;
+height: 200px;
   @include breakpoint(medium){
       height: 450px;
   }
@@ -89,7 +89,7 @@ CSS file.
 }
 
 .cascade-slider_item {
-  background-color: transparent;
+  background-color: white;
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -105,10 +105,9 @@ CSS file.
   opacity: 0;
   z-index: -1;
   width: 700px;
-  height: 400px;
-  // background-color: transparent;
+  height: 200px;
     @include breakpoint(medium){
-        // height: 400px;
+        height: 400px;
     }
 }
 
@@ -212,23 +211,4 @@ CSS file.
 			right: -.2rem;
 		}
 	}
-}
-.flex-video{
-  margin-bottom: 0;
-}
-
-
-.columns{
-  ul {
-    list-style: none;
-    padding: 0;
-  }
-  li:before {
-    content: "\f185"; /* FontAwesome Unicode */
-    font-family: FontAwesome;
-    display: inline-block;
-    margin-left: -1.3em; /* same as padding-left set on li */
-    width: 1.3em; /* same as padding-left set on li */
-    color: yellow;
-  }
 }
