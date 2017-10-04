@@ -8,6 +8,11 @@ Stylesheet: Main Stylesheet
 GENERAL STYLES
 *********************/
 
+@font-face{
+	font-family: "fontawesome";
+	src: url(../font-awesome/fonts/fontawesome-webfont.ttf);
+}
+
 
 $blue :#65c2ed; /* variable de couleur déclarée */
 $orange: #ea6e52;
@@ -24,6 +29,7 @@ a, a:visited {
 		-webkit-tap-highlight-color : rgba( 0, 0, 0, 0.3 );
 	}
 }
+
 
 /*********************
 H1, H2, H3, H4, H5 P STYLES
@@ -70,7 +76,7 @@ HEADER STYLES
 NAVIGATION STYLES
 *********************/
 .top-bar {
-	z-index: 99999;
+	z-index: 999;
 	box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
 	.title-area {
 		z-index: 1;
@@ -89,6 +95,7 @@ NAVIGATION STYLES
 				padding: 0 2rem;
 				a {
 					color:white;text-decoration: none;
+					padding: 1rem;
 				}
 				 a:hover {
 					 background-color: rgba(234,110,82,0.5);text-decoration: none;
@@ -741,6 +748,7 @@ p{
 			position: relative;
 			li{
 				position: relative;
+				color: white;
 			}
 		}
 		p{position: relative;}
@@ -820,16 +828,24 @@ a {color:white; text-decoration: underline;}
 	.skew-green{
 		background: $green;
 		transform: skewX(-10deg) ;
+		position: absolute;
+		z-index: 0;
 	}
 	a {color:white; text-decoration: underline;}
 	.columns.medium-8{
 		background-position: center;
 		float: left;
+		z-index: 998;
 	right: 0px;
 	position: absolute;
 	background-repeat: no-repeat;
 // background-position: 100% 50%;
 background-size: cover;
+	}
+
+	.colums.medium-6.xlarge-5{
+		position: relative;
+z-index: 999;
 	}
 }
 
@@ -838,8 +854,12 @@ background-size: cover;
 .article:nth-child(odd){
 	.columns.medium-5{
 		float: right;
+		position: relative;
+		z-index: 998;
 	}
 	.skew-green{
+		position: absolute;
+		z-index: 0;
 		background: $orange;
 		transform: skewX(9.5deg) translateX(2.5%);
 
@@ -908,7 +928,9 @@ a{color:white;}
     padding: 0.5rem 1rem;
 }
 .sponsors.row{
-
+ p{
+	 text-align: center;
+ }
 	>.columns{
 		padding: 3em 2rem 2rem 2rem;
 	}
@@ -998,6 +1020,8 @@ a{color:white;}
 	border: 1px solid #ea6e52;
 }
 .marquee {
+	background: white;
+border-bottom: 2px solid $green;
   width: 100%; /* the plugin works for responsive layouts so width is not necessary */
   overflow: hidden;
 	.columns{
@@ -1009,8 +1033,126 @@ a{color:white;}
 	img{
 		height: 200px;
 	}
+	p{
+		margin-bottom: 0!important;
+		padding: .5rem 0!important;
+	}
 }
-.marquee-div.columns{
+.marquee-div .columns{
 	float: left;
 	width: auto;
+	p{
+		margin-bottom: 0;
+		padding: 0.5rem 0;
+	}
+}
+.programmation{
+	>.columns.large-3.medium-4{
+		padding: 0.9375rem;
+		.columns{
+			position: relative;
+			figcaption{
+				width: 100%;
+				position: absolute;
+				padding: 1rem 1rem .2rem 1rem;
+				bottom: 0;
+				background: rgba(0,0,0,0.5);
+				color: white;
+				i{display: block;margin-bottom: .4rem;
+					span{
+						font-family: "Open Sans", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+					}}
+				i:before{
+					margin-right: .4rem;
+
+				}
+			}
+		}
+	}
+
+}
+
+.column.texte_prog.medium-10{
+	margin: auto;
+	color: white;
+	box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.8);
+	z-index: 99;
+	background: $orange;
+	padding: 1rem;
+	@include breakpoint(medium){
+		position: absolute;
+		transform: translateY(-50%);
+		right: 0;
+		left: 0;
+	}
+}
+#test-eq{
+	padding: 0 2rem;
+}
+
+.page-template-nous-connaitre{
+	.remerciements{
+		ul {
+			li{
+				color: white;
+			}
+		}
+		.columns.medium-6.xlarge-5{
+			z-index: 999;
+	    position: relative;
+			h2,h3,h4,h5{
+				position: relative;
+			}
+
+		}
+		.medium-8.columns{
+
+		}
+	}
+}
+.page-template-template-projets-humanitaires{
+	.remerciements{
+		.columns.medium-6.large-5{
+			h2{
+				position: relative;
+			}
+		}
+	}
+}
+.grid-item.grid-sizer-full{
+	color: white;
+	border-bottom: 2px solid $green;
+	font-size: 1.5rem;
+	span{
+		font-family: "Open Sans", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+	}
+	i:before{
+		margin-right: .4rem;
+
+	}
+}
+.col-artiste .artiste_descr{
+	position: relative;display: block;
+	padding: .5rem;
+	span{
+			font-family: "Open Sans", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+	}
+}
+
+.columns{
+	ul{
+		list-style-type: none;
+		li:before{
+			content:"\f185";
+			font-family: "fontawesome";
+			color: yellow;
+			margin-right: .4rem;
+		}
+	}
+}
+
+.content.row.columns{
+	.the_content{
+		padding: 0 2rem,
+	}
 }

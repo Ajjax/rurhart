@@ -59,7 +59,7 @@ Template Name: Programmation
         // Grid
           $content.="<div class='col-artiste grid-item grid-sizer'>";
             $time = explode('-',$date); if (!$time[1]) { $time[1] =' A venir'; }
-            $content.="<h4>".get_the_title()."</h4><i class='fa fa-clock-o' aria-hidden='true'><span>".$time[1]."</span></i>";
+            $content.="<span class='artiste_descr'><h4>".get_the_title()."</h4><i class='fa fa-clock-o' aria-hidden='true'><span>".$time[1]."</span></i></span>";
 
             $content.="<div class='row columns medium-12'><div class='medium-12 columns'>";
               $content.= get_the_post_thumbnail($post, $size='large');

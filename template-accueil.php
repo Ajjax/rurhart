@@ -3,16 +3,19 @@
 ?>
 
 <?php get_header(); ?>
+<div class="content row columns medium-12">
+  <div class="the_content">
+      <?php the_content();?>
+  </div>
+</div>
 
 <?php
   $texte_prog = get_field('texte_programmation');
  ?>
-
-
 <?php
 $args=array(
   'post_type' => 'slider',
-  'post_per_page' => 4
+  'posts_per_page' => -1
 );
 // The Query
 $the_query = new WP_Query( $args );
@@ -48,15 +51,16 @@ $the_query = new WP_Query( $args );
 
 
   <!-- Programmation -->
+  <?php   $page = get_page_by_title('Programme du festival');
+    // var_dump($page);
+    $annee = get_field('annee_de_programmation', $page->ID); ?>
+
   <div class="orange columns medium-12 ">
     <div class="programmation column row">
       <div class="medium-12 columns day">
-        <img class="image-before" src="<?php echo get_template_directory_uri() ;?>/assets/images/Fichier1.png" alt=""><h2 class="programmation-before">Programmation</h2>
+        <img class="image-before" src="<?php echo get_template_directory_uri() ;?>/assets/images/Fichier1.png" alt=""><h2 class="programmation-before"><?php echo $annee->name; ?></h2>
       </div>
         <?php
-          $page = get_page_by_title( 'Programme du festival');
-          // var_dump($page);
-          $annee = get_field('annee_de_programmation', $page->ID);
           $args_programmation = array(
             'post_type' => 'artiste',
             'tag_id' => $annee->term_id,
@@ -86,14 +90,14 @@ $the_query = new WP_Query( $args );
                   //   echo "<div class='columns medium-12'><p><i class='fa fa-calendar' aria-hidden='true'> ".$lejour[0]."</i></p></div>";
                   // }
 
-                  echo "<div class='columns medium-3'>";
+                  echo "<div class='columns medium-4 large-3'>";
 
                   $time = explode('-',$date);
                   if (!$time[1]) {
                     $time[1] =' A venir';
                   }
 
-                  echo "<div class='row columns medium-12'  style='background-image:url(".get_the_post_thumbnail_url($post, $size='medium').");background-size:cover;width:100%;height:200px;'><figcaption><h5>".get_the_title()."</h5><p><i class='fa fa-calendar' aria-hidden='true'><span>".$ladate."</span></i> <i class='fa fa-clock-o' aria-hidden='true'>".$time[1]."</i></p></figcaption><div class='medium-12 columns'>";
+                  echo "<div class='row columns medium-12'  style='background-image:url(".get_the_post_thumbnail_url($post, $size='medium').");background-size:cover;width:100%;height:200px;'><figcaption><h5>".get_the_title()."</h5><i class='fa fa-calendar' aria-hidden='true'><span>".$ladate."</span></i> <i class='fa fa-clock-o' aria-hidden='true'><span>".$time[1]."</span></i></figcaption><div class='medium-12 columns'>";
 
       // Infos des groupes
                   echo "</div></div></div>";
@@ -107,7 +111,7 @@ $the_query = new WP_Query( $args );
               $url = get_permalink($page->ID);
 
                ?>
-              <a href="<?php echo $url;?>">Détails de la programmation</a>
+              <a class="button" href="<?php echo $url;?>">Détails de la programmation</a>
             </div>
             </div>
             <div class="column texte_prog medium-10">

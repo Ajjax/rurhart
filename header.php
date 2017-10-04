@@ -37,7 +37,7 @@
 	<!-- Uncomment this line if using the Off-Canvas Menu -->
 
 	<body <?php body_class(); ?>>
-
+<div id="wptime-plugin-preloader"></div>
 		<div class="off-canvas-wrapper">
 
 			<?php get_template_part( 'parts/content', 'offcanvas' ); ?>
@@ -84,14 +84,18 @@
             ?>
             <div class="marquee-div columns">
             <?php
-            echo get_the_post_thumbnail($post, $size='medium');
-          wp_reset_postdata();
+            if (get_the_post_thumbnail($post, $size='medium')) {
+              echo get_the_post_thumbnail($post, $size='medium');
+            }
+            else {
+              the_content();
+            }
+            wp_reset_postdata();
             ?>
               </div>
             <?php
           }
         }
-
          ?>
     </div>
     <?php
